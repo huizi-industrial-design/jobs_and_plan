@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作笔记管理</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f7ff; padding: 20px; }
+        /* 使用 grid 布局，第一列为固定宽度，后三列平分剩余空间 */
+        main { display: grid; grid-template-columns: 300px 1fr 1fr 1fr; gap: 20px; height: 90vh; }
+        section { background: white; padding: 20px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-y: auto; }
+        textarea { border: 1px solid #ddd; border-radius: 8px; padding: 10px; resize: none; width: 90%; height: 50%; }
+        button { padding: 10px; border: none; border-radius: 6px; cursor: pointer; background: #0071e3; color: white; width: 90%; }
+        .list-item { padding: 12px; border-bottom: 1px solid #eee; margin-bottom: 8px; }
+        .list-item strong { color: #0071e3; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<main>
+    <section>
+        <h2>记录</h2>
+        <input type="date" id="note-date" style="width: 90%; padding: 8px; margin-bottom: 10px;">
+        <textarea id="note-content" placeholder="输入内容..."></textarea>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+            <button onclick="saveNote('work')">存为工作日志</button>
+            <button onclick="saveNote('life')">存为生活日志</button>
+            <button onclick="saveNote('weekly')">存为周志</button>
+        </div>
+    </section>
+    
+    <section><h3>工作日志</h3><div id="work-list"></div></section>
+    
+    <section><h3>生活日志</h3><div id="life-list"></div></section>
+    
+    <section><h3>周志</h3><div id="weekly-list"></div></section>
+</main>
+
+<script src="notes.js"></script>
+</body>
+</html>

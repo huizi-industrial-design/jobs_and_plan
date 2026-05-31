@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Huizi Career Platform</title>
+</head>
+<body>
+    <header>
+        <h1>Jobs and Plans</h1>
+    </header>
+
+    <main>
+        <!-- 左侧区域：包含输入框和表格 -->
+<section id="left-panel">
+<div class="input-panel">
+    <input type="text" id="in-company" placeholder="公司">
+    <input type="text" id="in-role" placeholder="职位">
+    <input type="text" id="in-status" placeholder="状态">
+    <input type="text" id="in-match" placeholder="匹配矩阵">
+    <input type="date" id="in-date"> <input type="text" id="in-note" placeholder="备注"> <button onclick="addNewJob()">添加</button>
+</div>
+
+<div class="table-header">
+    <div>公司</div><div>职位</div><div>状态</div><div>匹配</div><div>日期</div><div>备注</div><div>操作</div>
+</div>
+
+
+    
+    <div id="job-table-body"></div>
+</section>
+
+        <!-- 右侧区域：计划表 -->
+<aside id="right-panel">
+    <div class="calendar-header">
+        <input type="date" id="week-selector" onchange="changeWeek(this.value)">
+    </div>
+    <div id="days-container"></div>
+</aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<a href="notes.html" id="notes-shortcut">
+    📝 笔记系统
+</a>
+
+<style>
+    #notes-shortcut {
+        position: fixed; bottom: 30px; right: 30px;
+        background: #0071e3; color: white; padding: 15px 25px;
+        border-radius: 50px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+</style>
